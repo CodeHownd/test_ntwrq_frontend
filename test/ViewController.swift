@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     
     
+    @IBOutlet weak var loginStackView: UIStackView!
+    @IBOutlet weak var signUpStackView: UIStackView!
     @IBOutlet weak var buttonStackView: UIStackView!
     
     @IBOutlet weak var email: UITextField!
@@ -32,13 +34,13 @@ class ViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: Any) {
         (sender as? UIButton)?.isEnabled = false
-        UIView.animateKeyframes(withDuration: 3, delay: 0, options: [.calculationModeCubic], animations: {
+        UIView.animateKeyframes(withDuration: 2, delay: 0, options: [.calculationModeCubic], animations: {
             
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1.0/4.0, animations: {
-                self.signUpButton.alpha = 0.0
+                self.signUpStackView.alpha = 0.0
             })
             UIView.addKeyframe(withRelativeStartTime: 1.0/4.0, relativeDuration: 1.0/4.0, animations: {
-                self.signUpButton.isHidden = true
+                self.signUpStackView.isHidden = true
                 self.buttonStackView.layoutIfNeeded()
             })
             
@@ -59,18 +61,27 @@ class ViewController: UIViewController {
 
     @IBAction func signUpButton(_ sender: Any) {
         (sender as? UIButton)?.isEnabled = false
-        UIView.animateKeyframes(withDuration: 3, delay: 0, options: [.calculationModeCubic], animations: {
+        UIView.animateKeyframes(withDuration: 2, delay: 0, options: [.calculationModeCubic], animations: {
             
-            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1.0/4.0, animations: {
-                self.loginButton.alpha = 0
-                self.buttonStackView.layoutIfNeeded()
-
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5/4.0, animations: {
+                self.loginStackView.alpha = 0
+                self.view.layoutIfNeeded()
             })
             
-            UIView.addKeyframe(withRelativeStartTime: 1.0/4.0, relativeDuration: 1.0/4.0, animations: {
-                self.loginButton.isHidden = true
-                self.buttonStackView.layoutIfNeeded()
-
+            UIView.addKeyframe(withRelativeStartTime: 1.0/4.0, relativeDuration: 0.5/4.0, animations: {
+                self.loginStackView.isHidden = true
+                self.view.layoutIfNeeded()
+            })
+            
+            
+            UIView.addKeyframe(withRelativeStartTime: 2.0/4.0, relativeDuration: 1.5/4.0, animations: {
+                self.email.isHidden = false
+                self.email.alpha = 1.0
+            })
+            
+            UIView.addKeyframe(withRelativeStartTime: 3.0/4.0, relativeDuration: 1.5/4.0, animations: {
+                self.password.isHidden = false
+                self.password.alpha = 1
             })
         }, completion: {_ in print("Done")}
         )

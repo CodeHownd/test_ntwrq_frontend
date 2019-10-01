@@ -106,8 +106,10 @@
                         <outlet property="buttonStackView" destination="5Ja-6H-zjy" id="iBk-Ci-ooE"/>
                         <outlet property="email" destination="jsx-vz-UDK" id="IOi-nS-A9s"/>
                         <outlet property="loginButton" destination="6On-ey-hdJ" id="KNR-mL-JZ0"/>
+                        <outlet property="loginStackView" destination="5hf-XD-thM" id="cKJ-Yy-RXF"/>
                         <outlet property="password" destination="fj9-hr-spk" id="LfT-i3-0jg"/>
                         <outlet property="signUpButton" destination="jDd-k8-fOc" id="vHX-Qf-B45"/>
+                        <outlet property="signUpStackView" destination="Pcj-bH-DW4" id="XYK-Q0-lrX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
